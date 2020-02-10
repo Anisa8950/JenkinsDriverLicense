@@ -15,21 +15,27 @@ namespace JenkinsDriverLicense
             _metohds = methods;
         }
 
-        public double Calculate(string op, double number1, double number2)
+        public double Calculate(string op, double number2)
         {
+            double result=0;
+
             switch (op)
             {
                 case "+":
+                    result=_metohds.Add(number2);
                     break;
                 case "-":
+                    result = _metohds.Subtract(number2);
                     break;
                 case "x":
+                    result = _metohds.Multiply(number2);
                     break;
                 case "/":
+                    result = _metohds.Divide(number2);
                     break;
             }
 
-            return 0;
+            return result;
         }
     }
 }

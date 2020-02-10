@@ -8,29 +8,52 @@ namespace JenkinsDriverLicense
 {
     public class CalculatorMetods
     {
-        public double Add(double number1, double number2)
+        public double Accumulator { get; set; }
+
+
+        public CalculatorMetods()
         {
-            return number1 + number2;
+            Accumulator = 0;
         }
 
-        public double Subtract(double number1, double number2)
+        public void Clear()
         {
-            return number1 - number2;
+            Accumulator = 0;
         }
 
-        public double Multiply(double number1, double number2)
+        public double Add(double number2)
         {
-            return number1 * number2;
+            double result = Accumulator + number2;
+            Accumulator = result;
+            return result;
         }
 
-        public double Power(double number, double exp)
+        public double Subtract( double number2)
         {
-            return Math.Pow(number, exp);
+            double result = Accumulator - number2;
+            Accumulator = result;
+            return result;
         }
 
-        public double Divide(double number1, double number2)
+        public double Multiply(double number2)
         {
-            return number1 / number2;
+            double result = Accumulator * number2;
+            Accumulator = result;
+            return result;
+        }
+
+        public double Power(double exp)
+        {
+            double result = Math.Pow(Accumulator, exp);
+            Accumulator = result;
+            return result;
+        }
+
+        public double Divide(double number2)
+        {
+            double result = Accumulator / number2;
+            Accumulator = result;
+            return result;
         }
     }
 }

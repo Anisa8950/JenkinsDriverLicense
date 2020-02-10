@@ -46,8 +46,7 @@
             this.zeroB = new System.Windows.Forms.Button();
             this.displayTB = new System.Windows.Forms.TextBox();
             this.deleteB = new System.Windows.Forms.Button();
-            this.clearB = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.historyLB = new System.Windows.Forms.ListBox();
             this.history = new System.Windows.Forms.Label();
             this.equationL = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -198,7 +197,7 @@
             this.dotB.Name = "dotB";
             this.dotB.Size = new System.Drawing.Size(75, 23);
             this.dotB.TabIndex = 13;
-            this.dotB.Text = ".";
+            this.dotB.Text = ",";
             this.dotB.UseVisualStyleBackColor = true;
             this.dotB.Click += new System.EventHandler(this.buttonClick);
             // 
@@ -215,16 +214,16 @@
             // displayTB
             // 
             this.displayTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayTB.Location = new System.Drawing.Point(49, 81);
-            this.displayTB.Multiline = true;
+            this.displayTB.Location = new System.Drawing.Point(49, 85);
             this.displayTB.Name = "displayTB";
-            this.displayTB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.displayTB.Size = new System.Drawing.Size(520, 55);
+            this.displayTB.ReadOnly = true;
+            this.displayTB.Size = new System.Drawing.Size(520, 41);
             this.displayTB.TabIndex = 16;
+            this.displayTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // deleteB
             // 
-            this.deleteB.Location = new System.Drawing.Point(494, 240);
+            this.deleteB.Location = new System.Drawing.Point(494, 172);
             this.deleteB.Name = "deleteB";
             this.deleteB.Size = new System.Drawing.Size(75, 23);
             this.deleteB.TabIndex = 17;
@@ -232,24 +231,14 @@
             this.deleteB.UseVisualStyleBackColor = true;
             this.deleteB.Click += new System.EventHandler(this.deleteB_Click);
             // 
-            // clearB
+            // historyLB
             // 
-            this.clearB.Location = new System.Drawing.Point(494, 172);
-            this.clearB.Name = "clearB";
-            this.clearB.Size = new System.Drawing.Size(75, 23);
-            this.clearB.TabIndex = 18;
-            this.clearB.Text = "CE";
-            this.clearB.UseVisualStyleBackColor = true;
-            this.clearB.Click += new System.EventHandler(this.clearB_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(644, 85);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(237, 308);
-            this.listBox1.TabIndex = 19;
+            this.historyLB.FormattingEnabled = true;
+            this.historyLB.ItemHeight = 16;
+            this.historyLB.Location = new System.Drawing.Point(644, 85);
+            this.historyLB.Name = "historyLB";
+            this.historyLB.Size = new System.Drawing.Size(237, 308);
+            this.historyLB.TabIndex = 19;
             // 
             // history
             // 
@@ -279,8 +268,7 @@
             this.ClientSize = new System.Drawing.Size(908, 409);
             this.Controls.Add(this.equationL);
             this.Controls.Add(this.history);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.clearB);
+            this.Controls.Add(this.historyLB);
             this.Controls.Add(this.deleteB);
             this.Controls.Add(this.displayTB);
             this.Controls.Add(this.pulsB);
@@ -327,8 +315,7 @@
         private System.Windows.Forms.Button zeroB;
         private System.Windows.Forms.TextBox displayTB;
         private System.Windows.Forms.Button deleteB;
-        private System.Windows.Forms.Button clearB;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox historyLB;
         private System.Windows.Forms.Label history;
         private System.Windows.Forms.Label equationL;
     }

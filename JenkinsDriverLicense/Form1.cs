@@ -15,17 +15,16 @@ namespace JenkinsDriverLicense
         private CalculatorMetods _metohds;
         private OperatorController operatorController;
 
-        public int _result { get; set; }
-        public string _operator { get; set; }
+        private string _operator = "";
 
         public CaltulatorForm()
         {
             InitializeComponent();
             _metohds = new CalculatorMetods();
             operatorController = new OperatorController(_metohds);
+
             this.Size = new Size(480, 400);
             equationL.Text = "";
-
         }
 
         private void buttonClick(object sender, EventArgs e)
@@ -47,28 +46,35 @@ namespace JenkinsDriverLicense
         private void operatorClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            if (int.TryParse(displayTB.Text, out int n))
+            if (double.TryParse(displayTB.Text, out double n))
             {
+                if(_metohds.Accumulator != 0)
+                {
+                    equationL.Text = ""+ _metohds.Accumulator;
+                }
                 displayTB.Text = button.Text;
                 _operator = button.Text;
                 equationL.Text = equationL.Text + " " + button.Text + " ";
+
+                _metohds.Accumulator = n;
             }
         }
 
         private void equelB_Click(object sender, EventArgs e)
         {
-
+            operatorController.Calculate(_operator, double.Parse(displayTB.Text));
+            displayTB.Text = "" + _metohds.Accumulator;
+            equationL.Text = equationL.Text + " = " + _metohds.Accumulator;
+            historyLB.Items.Add(equationL.Text);
         }
 
         private void deleteB_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void clearB_Click(object sender, EventArgs e)
-        {
             displayTB.Text = "";
+            equationL.Text = "";
+            _metohds.Clear();
         }
+
 
         private void history_Click(object sender, EventArgs e)
         {
