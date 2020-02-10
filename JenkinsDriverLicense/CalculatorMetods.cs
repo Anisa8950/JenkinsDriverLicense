@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JenkinsDriverLicense
 {
-    public class Calculator
+    public class CalculatorMetods
     {
         public double Add(double number1, double number2)
         {

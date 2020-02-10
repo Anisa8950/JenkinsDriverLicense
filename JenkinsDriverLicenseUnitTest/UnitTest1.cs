@@ -5,12 +5,12 @@ namespace JenkinsDriverLicenseUnitTest
 {
     public class Tests
     {
-        private Calculator uut;
+        private CalculatorMetods uut;
 
         [SetUp]
         public void Setup()
         {
-            uut = new Calculator();
+            uut = new CalculatorMetods();
         }
 
         [TestCase(1, 1, 2)]
