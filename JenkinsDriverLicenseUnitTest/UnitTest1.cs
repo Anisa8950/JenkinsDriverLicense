@@ -27,7 +27,7 @@ namespace JenkinsDriverLicenseUnitTest
         [TestCase(3.5, 2.5, 1)]
         [TestCase(0, 0, 0)]
         [TestCase(-2, -4, 2)]
-        [TestCase(2, -4, -2)]
+        [TestCase(2, -4, 6)]
         public void Substract(double number1, double number2, double result)
         {
             Assert.That(uut.Subtract(number1, number2), Is.EqualTo(result).Within(0.005));
