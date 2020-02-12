@@ -28,7 +28,6 @@ namespace JenkinsDriverLicenseUnitTest
 
         [TestCase(-1, -1, -2)]
         [TestCase(3, -2.5, 0.5)]
-        [TestCase(0, 0, 0)]
         [TestCase(4, -5.6, -1.6)]
         [TestCase(-6, 3, -3)]
         public void AddMethod_withNegativeInputValues(double number1, double number2, double result)
@@ -99,15 +98,24 @@ namespace JenkinsDriverLicenseUnitTest
         }
 
         [TestCase(10, 5, 2)]
-        [TestCase(4, 2, 2)]
-        [TestCase(8, 2, 4)]
-
-        public void Divide(double number1, double number2, double result)
+        [TestCase(2, 0, 0)]
+        [TestCase(0, 2, 0)]
+        public void TestDivide_PositiveInputValues(double number1, double number2, double result)
         {
             uut.Accumulator = number1;
             Assert.That(uut.Divide(number2), Is.EqualTo(result).Within(0.005));
-
         }
+
+        [TestCase(-10, -5, 2)]
+        [TestCase(10, -5, -2)]
+        [TestCase(-10, -5, -2)]
+        public void TestDivide_NegativeInputValues(double number1, double number2, double result)
+        {
+            uut.Accumulator = number1;
+            Assert.That(uut.Divide(number2), Is.EqualTo(result).Within(0.005));
+        }
+
+
 
         [Test]
         public void Pi()
