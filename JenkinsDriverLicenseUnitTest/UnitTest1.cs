@@ -83,6 +83,20 @@ namespace JenkinsDriverLicenseUnitTest
 
         }
 
+        public void Clear()
+
+        {
+
+            uut.Clear();
+
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+
+
+
+
+        }
+
+
 
     }
 
