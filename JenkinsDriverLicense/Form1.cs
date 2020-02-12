@@ -41,23 +41,23 @@ namespace JenkinsDriverLicense
             }
         }
 
+        private double number1 = 0;
         private void operatorClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             if (double.TryParse(displayTB.Text, out double n))
             {
-                if(_metohds.Accumulator == 0)
+                number1 = n;
+                if (_metohds.Accumulator == 0)
                 {
                     _metohds.Accumulator = n;
-                }
-                if(_metohds.Accumulator != 0)
-                {
-                    equationL.Text = ""+ _metohds.Accumulator;                    
-                }
-                displayTB.Text = button.Text;
-                _operator = button.Text;
-                equationL.Text = n + " " + button.Text + " ";                
+                }             
+                               
             }
+
+            equationL.Text = number1 + " " + button.Text + " ";
+            _operator = button.Text;
+            displayTB.Text = button.Text;
         }
 
         private void equelB_Click(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace JenkinsDriverLicense
 
         private void fortegn_Click(object sender, EventArgs e)
         {
-            if(displayTB.Text != "")
+            if(displayTB.Text != "" && displayTB.Text != _operator)
             {
                 displayTB.Text = "" + double.Parse(displayTB.Text) * -1;
             }            
