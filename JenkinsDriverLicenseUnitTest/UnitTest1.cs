@@ -36,6 +36,10 @@ namespace JenkinsDriverLicenseUnitTest
             Assert.That(uut.Add(number2), Is.EqualTo(result).Within(0.005));
         }
 
+
+
+
+
         [TestCase(3, 2, 1)]
         [TestCase(3.5, 2.5, 1)]
         [TestCase(0, 0, 0)]
@@ -57,6 +61,10 @@ namespace JenkinsDriverLicenseUnitTest
             uut.Accumulator = number1;
             Assert.That(uut.Subtract(number2), Is.EqualTo(result).Within(0.005));
         }
+
+
+
+
 
         [TestCase(2, 3, 6)]
         [TestCase(3, 4, 12)]
@@ -80,6 +88,10 @@ namespace JenkinsDriverLicenseUnitTest
             Assert.That(uut.Multiply(number2), Is.EqualTo(result).Within(0.005));
         }
 
+
+
+
+
         [TestCase(3, 2, 9)]
         [TestCase(2, 0, 1)]
         [TestCase(4, 3.6, 147.033)]
@@ -97,7 +109,12 @@ namespace JenkinsDriverLicenseUnitTest
             Assert.That(uut.Power(exp), Is.EqualTo(result).Within(0.005));
         }
 
+
+
+
+
         [TestCase(10, 5, 2)]
+        [TestCase(10.25, 2.35, 4.3617)]
         [TestCase(2, 0, 0)]
         [TestCase(0, 2, 0)]
         public void TestDivide_PositiveInputValues(double number1, double number2, double result)
@@ -121,7 +138,6 @@ namespace JenkinsDriverLicenseUnitTest
         public void Pi()
         {
             Assert.That(uut.Pi(),Is.EqualTo(Math.PI));
-
         }
 
 
@@ -129,22 +145,16 @@ namespace JenkinsDriverLicenseUnitTest
         public void Euhler()
         {
             Assert.That(uut.Euler(), Is.EqualTo(Math.E));
-
         }
 
         [Test]
-
         public void Clear()
-
         {
+            uut.Accumulator = 3;
+            Assert.That(uut.Accumulator, Is.EqualTo(3));
 
             uut.Clear();
-
             Assert.That(uut.Accumulator, Is.EqualTo(0));
-
-
-
-
         }
 
         [TestCase(1,0)]
