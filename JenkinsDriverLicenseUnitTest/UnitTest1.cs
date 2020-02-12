@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using JenkinsDriverLicense;
 
@@ -66,6 +67,13 @@ namespace JenkinsDriverLicenseUnitTest
         }
 
 
+        [Test]
+        public void Euler()
+        {
+            double result = uut.Euler();
+
+            Assert.That(result, Is.EqualTo(Math.E));
+        }
 
 
     }
