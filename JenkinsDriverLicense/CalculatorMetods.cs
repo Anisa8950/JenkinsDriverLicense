@@ -55,5 +55,22 @@ namespace JenkinsDriverLicense
             Accumulator = result;
             return result;
         }
+
+        public double Log(double number2)
+        {
+            double result = Math.Log10(number2);
+            Accumulator = result;
+            return result;
+        }
+
+        public double Pi()
+        {
+            return Math.PI;
+        }
+
+        public double Euler()
+        {
+            return Math.E;
+        }
     }
 }

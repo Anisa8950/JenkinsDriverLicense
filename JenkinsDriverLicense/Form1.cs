@@ -14,7 +14,6 @@ namespace JenkinsDriverLicense
     {
         private CalculatorMetods _metohds;
         private OperatorController operatorController;
-
         private string _operator = "";
 
         public CaltulatorForm()
@@ -23,7 +22,7 @@ namespace JenkinsDriverLicense
             _metohds = new CalculatorMetods();
             operatorController = new OperatorController(_metohds);
 
-            this.Size = new Size(480, 400);
+            this.Size = new Size(440, 430);
             equationL.Text = "";
         }
 
@@ -40,7 +39,6 @@ namespace JenkinsDriverLicense
             {
                 displayTB.Text = displayTB.Text + button.Text;
             }
-            equationL.Text = equationL.Text + button.Text;
         }
 
         private void operatorClick(object sender, EventArgs e)
@@ -54,7 +52,7 @@ namespace JenkinsDriverLicense
                 }
                 displayTB.Text = button.Text;
                 _operator = button.Text;
-                equationL.Text = equationL.Text + " " + button.Text + " ";
+                equationL.Text = n + " " + button.Text + " ";
 
                 _metohds.Accumulator = n;
             }
@@ -62,6 +60,7 @@ namespace JenkinsDriverLicense
 
         private void equelB_Click(object sender, EventArgs e)
         {
+            equationL.Text = equationL.Text+displayTB.Text;
             operatorController.Calculate(_operator, double.Parse(displayTB.Text));
             displayTB.Text = "" + _metohds.Accumulator;
             equationL.Text = equationL.Text + " = " + _metohds.Accumulator;
@@ -78,14 +77,22 @@ namespace JenkinsDriverLicense
 
         private void history_Click(object sender, EventArgs e)
         {
-            if(this.Size == new Size(700, 400))
+            if(this.Size == new Size(675, 430))
             {
-                this.Size = new Size(480, 400);
+                this.Size = new Size(440, 430);
             }
             else
             {
-                this.Size = new Size(700, 400);
+                this.Size = new Size(675, 430);
             }
+        }
+
+        private void fortegn_Click(object sender, EventArgs e)
+        {
+            if(displayTB.Text != "")
+            {
+                displayTB.Text = "" + double.Parse(displayTB.Text) * -1;
+            }            
         }
     }
 }

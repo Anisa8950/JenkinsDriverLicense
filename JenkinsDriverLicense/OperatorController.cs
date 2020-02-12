@@ -33,6 +33,18 @@ namespace JenkinsDriverLicense
                 case "/":
                     result = _metohds.Divide(number2);
                     break;
+                case "^":
+                    result = _metohds.Power(number2);
+                    break;
+                case "log":
+                    result = _metohds.Log(number2);
+                    break;
+                case "e":
+                    result = _metohds.Euler();
+                    break;
+                case "π":
+                    result = _metohds.Pi();
+                    break;
             }
 
             return result;
