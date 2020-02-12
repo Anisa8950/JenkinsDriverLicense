@@ -1,6 +1,7 @@
 using System;
 using NUnit.Framework;
 using JenkinsDriverLicense;
+using NUnit.Framework.Internal;
 
 namespace JenkinsDriverLicenseUnitTest
 {
@@ -30,6 +31,7 @@ namespace JenkinsDriverLicenseUnitTest
         [TestCase(0, 0, 0)]
         [TestCase(-2, -4, 2)]
         [TestCase(2, -4, 6)]
+
         public void Substract(double number1, double number2, double result)
         {
             uut.Accumulator = number1;
@@ -75,12 +77,26 @@ namespace JenkinsDriverLicenseUnitTest
 
 
         [Test]
-
         public void Euhler()
         {
             Assert.That(uut.Euler(), Is.EqualTo(Math.E));
 
         }
+
+        public void Clear()
+
+        {
+
+            uut.Clear();
+
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+
+
+
+
+        }
+
+
 
         
         [TestCase(4, 2, 2)]
