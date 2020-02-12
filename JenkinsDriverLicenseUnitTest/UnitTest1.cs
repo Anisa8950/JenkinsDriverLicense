@@ -65,6 +65,11 @@ namespace JenkinsDriverLicenseUnitTest
 
         }
 
+        public void Log10Method(double number1, double result)
+        {
+            uut.Accumulator = number1;
+        }
+
 
 
 
