@@ -68,7 +68,7 @@ namespace JenkinsDriverLicense
             return Math.PI;
         }
 
-        public double Euler() // this is euler 
+        public double Euler() 
         {
             return Math.E;
         }
