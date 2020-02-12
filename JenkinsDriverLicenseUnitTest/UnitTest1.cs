@@ -115,6 +115,7 @@ namespace JenkinsDriverLicenseUnitTest
         {
             uut.Accumulator = number1;
             Assert.That(uut.Divide(number2), Is.EqualTo(result).Within(0.005));
+        }
 
         [Test]
         public void Pi()
