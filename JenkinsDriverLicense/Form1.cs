@@ -46,22 +46,35 @@ namespace JenkinsDriverLicense
             Button button = (Button)sender;
             if (double.TryParse(displayTB.Text, out double n))
             {
+                if(_metohds.Accumulator == 0)
+                {
+                    _metohds.Accumulator = n;
+                }
                 if(_metohds.Accumulator != 0)
                 {
-                    equationL.Text = ""+ _metohds.Accumulator;
+                    equationL.Text = ""+ _metohds.Accumulator;                    
                 }
                 displayTB.Text = button.Text;
                 _operator = button.Text;
-                equationL.Text = n + " " + button.Text + " ";
-
-                _metohds.Accumulator = n;
+                equationL.Text = n + " " + button.Text + " ";                
             }
         }
 
         private void equelB_Click(object sender, EventArgs e)
         {
-            equationL.Text = equationL.Text+displayTB.Text;
-            operatorController.Calculate(_operator, double.Parse(displayTB.Text));
+            string result = Convert.ToString(_metohds.Accumulator);
+
+
+            if(_operator!="log")
+            {
+                equationL.Text = equationL.Text + displayTB.Text;
+                operatorController.Calculate(_operator, double.Parse(displayTB.Text));
+            }
+            else
+            {
+                operatorController.Calculate(_operator, 0);
+            }
+                       
             displayTB.Text = "" + _metohds.Accumulator;
             equationL.Text = equationL.Text + " = " + _metohds.Accumulator;
             historyLB.Items.Add(equationL.Text);
@@ -97,7 +110,9 @@ namespace JenkinsDriverLicense
 
         private void valuesClick(object sender, EventArgs e)
         {
+            Button button = (Button)sender;
 
+            
         }
     }
 }
