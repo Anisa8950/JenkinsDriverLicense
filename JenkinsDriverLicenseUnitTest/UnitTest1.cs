@@ -74,6 +74,13 @@ namespace JenkinsDriverLicenseUnitTest
 
         }
 
+        [Test]
+        public void Euler()
+        {
+            double result = uut.Euler();
+
+            Assert.That(result, Is.EqualTo(Math.E));
+        }
 
 
     }
