@@ -83,6 +83,8 @@ namespace JenkinsDriverLicenseUnitTest
 
         }
 
+        [Test]
+
         public void Clear()
 
         {
