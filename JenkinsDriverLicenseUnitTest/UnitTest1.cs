@@ -102,9 +102,9 @@ namespace JenkinsDriverLicenseUnitTest
         }
 
         [TestCase(2, -3.5, 0.088)]
-        [TestCase(-2, -2, -0.25)]
-        [TestCase(-2, 0, -1)]
-        [TestCase(-4, 2.3, -24.251)]
+        [TestCase(-2, -2, 0.25)]
+        [TestCase(-2, 0, 1)]
+        [TestCase(-4, 2, 16)]
         public void TestPowerMethod_withNegativeInputValues(double number1, double exp, double result)
         {
             uut.Accumulator = number1;
@@ -134,39 +134,44 @@ namespace JenkinsDriverLicenseUnitTest
             Assert.That(uut.Divide(number2), Is.EqualTo(result).Within(0.005));
         }
 
+
+
+
+        [TestCase(1, 0)]
+        [TestCase(10, 1)]
+        [TestCase(20, 1.301)]
+        [TestCase(54.78, 1.739)]
+        [TestCase(137.23, 2.137)]
+        [TestCase(289.21, 2.461)]
+        public void TestLog10method_withPositiveInputValues(double accumulator, double result)
+        {
+            uut.Accumulator = accumulator;
+            Assert.That(uut.Log(), Is.EqualTo(result).Within(0.005));
+        }
+
+
+
         [Test]
-        public void Pi()
+        public void TestPiMethod()
         {
             Assert.That(uut.Pi(),Is.EqualTo(Math.PI));
         }
 
 
         [Test]
-        public void Euhler()
+        public void TestEuhlerMethod()
         {
             Assert.That(uut.Euler(), Is.EqualTo(Math.E));
         }
 
         [Test]
-        public void Clear()
+        public void TestClearMethod()
         {
             uut.Accumulator = 3;
             Assert.That(uut.Accumulator, Is.EqualTo(3));
 
             uut.Clear();
             Assert.That(uut.Accumulator, Is.EqualTo(0));
-        }
-
-        [TestCase(1,0)]
-        [TestCase(10, 1)]
-        [TestCase(20, 1.301)]
-        [TestCase(54.78, 1.739)]
-        [TestCase(137.23, 2.137)]
-        [TestCase(289.21, 2.461)]
-        public void Log10method_withPositiveInputValues(double accumulator, double result)
-        {
-            uut.Accumulator = accumulator;
-            Assert.That(uut.Log(), Is.EqualTo(result).Within(0.005));
         }
 
 
