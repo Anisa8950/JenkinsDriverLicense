@@ -84,6 +84,25 @@ namespace JenkinsDriverLicenseUnitTest
         }
 
 
+        
+        
+        [TestCase(4, 2, 2)]
+        public void Accumulator(double testNumber1, double testNumber2, double testNumber3)
+        {
+            uut.Accumulator = 1;
+            
+            double result1 = uut.Add(testNumber1);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(result1));
+
+            double result2 = uut.Subtract(testNumber2);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(result2));
+
+            double result3 = uut.Multiply(testNumber3);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(result3));
+        }
     }
 
 }
