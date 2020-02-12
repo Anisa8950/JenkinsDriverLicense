@@ -117,7 +117,7 @@ namespace JenkinsDriverLicenseUnitTest
 
         [TestCase(10, 5, 2)]
         [TestCase(10.25, 2.35, 4.3617)]
-        [TestCase(2, 0, 0)]
+        [TestCase(2, 0, double.PositiveInfinity)]
         [TestCase(0, 2, 0)]
         public void TestDivide_PositiveInputValues(double number1, double number2, double result)
         {
@@ -127,7 +127,7 @@ namespace JenkinsDriverLicenseUnitTest
 
         [TestCase(-10, -5, 2)]
         [TestCase(10, -5, -2)]
-        [TestCase(-10, -5, -2)]
+        [TestCase(-10, 5, -2)]
         public void TestDivide_NegativeInputValues(double number1, double number2, double result)
         {
             uut.Accumulator = number1;
