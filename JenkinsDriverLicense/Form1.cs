@@ -111,8 +111,8 @@ namespace JenkinsDriverLicense
         private void valuesClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
+            displayTB.Text = "" + operatorController.Calculate(button.Text, 0);
 
-            
         }
     }
 }
