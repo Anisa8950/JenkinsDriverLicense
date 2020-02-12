@@ -21,12 +21,41 @@ namespace JenkinsDriverLicense
             Accumulator = 0;
         }
 
-        public double Add(double number2)
+        public double Add(double number1, double number2)
         {
-            double result = Accumulator + number2;
+            double result = number1 + number2;
             Accumulator = result;
             return result;
         }
+
+        public double Subtract(double number1, double number2)
+        {
+            double result = number1 - number2;
+            Accumulator = result;
+            return result;
+        }
+
+        public double Multiply(double number1, double number2)
+        {
+            double result = number1 * number2;
+            Accumulator = result;
+            return result;
+        }
+
+        public double Power(double number1, double exp)
+        {
+            double result = Math.Pow(number1, exp);
+            Accumulator = result;
+            return result;
+        }
+
+        public double Divide(double dividend,double divisor)
+        {
+            double result = dividend / divisor;
+            Accumulator = result;
+            return result;
+        }
+
 
         public double Subtract( double number2)
         {
@@ -49,9 +78,9 @@ namespace JenkinsDriverLicense
             return result;
         }
 
-        public double Divide(double number2)
+        public double Divide(double divisor)
         {
-            double result = Accumulator / number2;
+            double result = Accumulator / divisor;
             Accumulator = result;
             return result;
         }
