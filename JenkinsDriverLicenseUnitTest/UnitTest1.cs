@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using JenkinsDriverLicense;
 
@@ -65,6 +66,13 @@ namespace JenkinsDriverLicenseUnitTest
 
         }
 
+        [Test]
+
+        public void Pi()
+        {
+            Assert.That(uut.Pi(),Is.EqualTo(Math.PI));
+
+        }
 
 
 
