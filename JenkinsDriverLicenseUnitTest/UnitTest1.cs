@@ -68,19 +68,12 @@ namespace JenkinsDriverLicenseUnitTest
 
         [Test]
 
-        public void Pi() // her er pi testen
+        public void Pi()
         {
             Assert.That(uut.Pi(),Is.EqualTo(Math.PI));
 
         }
 
-        [Test]
-        public void Euler()
-        {
-            double result = uut.Euler();
-
-            Assert.That(result, Is.EqualTo(Math.E));
-        }
 
 
     }
