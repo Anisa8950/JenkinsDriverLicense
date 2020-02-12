@@ -69,7 +69,6 @@ namespace JenkinsDriverLicenseUnitTest
         }
 
         [Test]
-
         public void Pi()
         {
             Assert.That(uut.Pi(),Is.EqualTo(Math.PI));
@@ -84,25 +83,6 @@ namespace JenkinsDriverLicenseUnitTest
             Assert.That(uut.Euler(), Is.EqualTo(Math.E));
 
         }
-
-
-        [Test]
-
-        public void Clear()
-
-        {
-
-            uut.Clear();
-            
-            Assert.That(uut.Accumulator, Is.EqualTo(0));
-
-          
-
-
-        }
-
-
-
 
 
     }
