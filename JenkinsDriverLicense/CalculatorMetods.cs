@@ -56,6 +56,13 @@ namespace JenkinsDriverLicense
             return result;
         }
 
+        public double Add(double number2)
+        {
+            double result = Accumulator + number2;
+            Accumulator = result;
+            return result;
+        }
+
 
         public double Subtract( double number2)
         {
