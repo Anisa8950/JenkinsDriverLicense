@@ -1,6 +1,7 @@
 using System;
 using NUnit.Framework;
 using JenkinsDriverLicense;
+using NUnit.Framework.Internal;
 
 namespace JenkinsDriverLicenseUnitTest
 {
@@ -115,6 +116,27 @@ namespace JenkinsDriverLicenseUnitTest
 
         }
 
+
+        [Test]
+        public void Euhler()
+        {
+            Assert.That(uut.Euler(), Is.EqualTo(Math.E));
+
+        }
+
+        public void Clear()
+
+        {
+
+            uut.Clear();
+
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
+
+
+
+
+        }
+
         [TestCase(1,0)]
         [TestCase(10, 1)]
         [TestCase(20, 1.301)]
@@ -128,6 +150,24 @@ namespace JenkinsDriverLicenseUnitTest
         }
 
 
+        
+        [TestCase(4, 2, 2)]
+        public void Accumulator(double testNumber1, double testNumber2, double testNumber3)
+        {
+            uut.Accumulator = 1;
+            
+            double result1 = uut.Add(testNumber1);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(result1));
+
+            double result2 = uut.Subtract(testNumber2);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(result2));
+
+            double result3 = uut.Multiply(testNumber3);
+
+            Assert.That(uut.Accumulator, Is.EqualTo(result3));
+        }
     }
 
 }
