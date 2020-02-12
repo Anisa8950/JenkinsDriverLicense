@@ -94,6 +94,11 @@ namespace JenkinsDriverLicense
                 displayTB.Text = "" + double.Parse(displayTB.Text) * -1;
             }            
         }
+
+        private void valuesClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
