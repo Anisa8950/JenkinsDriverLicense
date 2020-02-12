@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using JenkinsDriverLicense;
 
@@ -65,11 +66,13 @@ namespace JenkinsDriverLicenseUnitTest
 
         }
 
-        public void Log10Method(double number1, double result)
-        {
-            uut.Accumulator = number1;
-        }
+        [Test]
 
+        public void Pi()
+        {
+            Assert.That(uut.Pi(),Is.EqualTo(Math.PI));
+
+        }
 
 
 

@@ -37,7 +37,7 @@ namespace JenkinsDriverLicense
                     result = _metohds.Power(number2);
                     break;
                 case "log":
-                    result = _metohds.Log(number2);
+                    result = _metohds.Log();
                     break;
                 case "e":
                     result = _metohds.Euler();
