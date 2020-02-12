@@ -82,35 +82,6 @@ namespace JenkinsDriverLicenseUnitTest
 
         }
 
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
         [TestCase(4, 2, 2)]
         public void Accumulator(double testNumber1, double testNumber2, double testNumber3)
