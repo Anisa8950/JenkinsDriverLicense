@@ -53,5 +53,21 @@ namespace JenkinsDriverLicenseUnitTest
             uut.Accumulator = number1;
             Assert.That(uut.Power(exp), Is.EqualTo(result).Within(0.005));
         }
+
+        [TestCase(10, 5, 2)]
+        [TestCase(4, 2, 2)]
+        [TestCase(8, 2, 4)]
+
+        public void Divide(double number1, double number2, double result)
+        {
+            uut.Accumulator = number1;
+            Assert.That(uut.Divide(number2), Is.EqualTo(result).Within(0.005));
+
+        }
+
+
+
+
     }
+
 }
